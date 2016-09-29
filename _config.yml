@@ -1,7 +1,7 @@
 ---
 name: parson showcase jekyll github
 markdown: kramdown
-baseurl: "/pages/parson-ag/doc-parson"
+baseurl: "/jekyll-demo-showcase/"
 producturl: "doc-products"
 componenturl: "doc-components"
 
