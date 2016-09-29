@@ -1,6 +1,6 @@
 ---
 layout: default
-title: parson Github Showcase
+title: start page
 ---
 
 This site demonstrates how to publish documentation for different products and components on Github pages. It juses the Jekyll framework together with an open-source theme.
