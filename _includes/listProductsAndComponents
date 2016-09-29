@@ -1,0 +1,48 @@
+{% assign distinctComponentUris = '' | split: ',' %}
+{% assign distinctComponentUris = '' | split: ',' %}
+{% assign componentPages = site.doc-components | sort: 'relative_path' %}
+{% assign componentPages = site.doc-components | sort: 'relative_path' %}
+
+{% for page in componentPages %}
+ {% assign currUrl = page.relative_path | split: "/" %}
+ {% assign currComponent = currUrl[1] %}
+ 
+ {% unless currComponent == previous %} 
+  {% assign newUri = currUrl[0] | append: '/' | append: currUrl[1] %}
+  {% assign distinctComponentUris = distinctComponentUris | push: currComponent %}  
+ {% endunless %} 
+ {% assign previous = currComponent %}
+{% endfor %}
+
+{% for page in componentPages %}
+ {% assign currUrl = page.relative_path | split: "/" %}
+ {% assign currComponent = currUrl[1] %}
+ 
+ {% unless currComponent == previous %} 
+  {% assign newUri = currUrl[0] | append: '/' | append: currUrl[1] %}
+  {% assign distinctComponentUris = distinctComponentUris | push: currComponent %}  
+ {% endunless %} 
+ {% assign previous = currComponent %}
+{% endfor %}
+
+
+{% for uri in distinctComponentUris %}
+ {% assign currComponentLabel = uri | split: "-" %}
+ {% capture headingLabel %}{% for word in currComponentLabel %}{{ word | capitalize }} {% endfor %}{% endcapture %}
+ <h2 id="{{ currComponent }}">{{ headingLabel }}</h2>
+ <ul class="component-page"><li><a href="{{ site.baseurl }}/doc-components/{{ uri }}/index.html"> Component details</a></li></ul>
+ <ul class="components">
+  {% for page in distinctComponentUris %}
+   {% assign pageUrl = page | split: "_" %}   
+   {% assign currComponent = pageUrl[0] %}
+   {% assign currComponentLabel = pageUrl[1] | split: "-" %}
+   {% capture componentLabel %}{% for word in currComponentLabel %}{{ word | capitalize }} {% endfor %}{% endcapture %}   
+   {% assign currParentComponent = currComponent %}   
+   {% if currParentComponent == uri %}   
+   <li>
+   <a href="{{ site.baseurl }}/doc-components/{{ page }}/index.html">{{ componentLabel }}</a>		
+   </li>
+   {% endif %}
+  {% endfor %} 
+ </ul>
+{% endfor %}

@@ -1,0 +1,16 @@
+---
+name: parson showcase jekyll github
+markdown: kramdown
+baseurl: "/pages/parson-ag/doc-parson"
+producturl: "doc-products"
+componenturl: "doc-components"
+
+collections:
+  doc-images:
+    output: true  
+  doc-products:
+    output: true
+  doc-components:
+    output: true
+  doc-troubleshooting:
+    output: true

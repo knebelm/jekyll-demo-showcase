@@ -1,0 +1,24 @@
+<div id="banner">
+  <div class="banner-inner">
+ 
+<a href="https://{{ site.github.pages_hostname }}{{ site.baseurl }}/" class="button">Documentation Showcase</a>
+{% case hasPageType %}
+{% when 'productPage' %}
+ >> {{ page.title }}
+{% when 'componentPage' %}
+ >> <a href="https://{{ site.github.pages_hostname }}{{ site.baseurl }}/doc-products/{{ productNameResolvedUrl }}"  class="button">{{ headingLabel }}</a> >> {{ page.title }}
+{% else %}
+ >> {{ page.title }}
+{% endcase %}
+
+ <!--<span id="logo"><span class="octicon octicon-mark-github"></span></span>
+
+    <a href="http://www.parson-europe.com" class="button fork"><strong>Fork from Github</strong></a>
+    <div class="downloads">
+      <span>Download sources:</span>
+      <ul>
+        <li><a href="https://github.com/parson-ag/XXX" class="button">Showcase ZIP</a></li>
+      </ul>
+    </div>-->
+  </div>
+</div>
