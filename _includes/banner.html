@@ -1,12 +1,12 @@
 <div id="banner">
   <div class="banner-inner">
  
-<a href="https://knebelm.github.io{{ site.baseurl }}/" class="button">Showcase Start Page</a>
+    <a href="https://parson-ag.github.io{{ site.baseurl }}/" class="button">Showcase Start Page</a>
 {% case hasPageType %}
 {% when 'productPage' %}
  >> {{ page.title }}
 {% when 'componentPage' %}
- >> <a href="https://knebelm.github.io{{ site.baseurl }}/doc-products/{{ productNameResolvedUrl }}"  class="button">{{ headingLabel }}</a> >> {{ page.title }}
+>> <a href="https://parson-ag.github.io{{ site.baseurl }}/doc-products/{{ productNameResolvedUrl }}"  class="button">{{ headingLabel }}</a> >> {{ page.title }}
 {% else %}
  >> {{ page.title }}
 {% endcase %}
