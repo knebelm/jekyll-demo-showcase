@@ -3,7 +3,7 @@ layout: default
 title: start page
 ---
 
-This site demonstrates how to publish documentation for different products and components on Github pages. It juses the Jekyll framework together with an open-source theme.
+This site demonstrates how to publish documentation for different products and components on Github pages. It uses the Jekyll framework together with an open-source theme.
 
 # Products
 This section lists all products and components and links to the relevant pages. The relevant information is collected from subfolders belonging to the corresponding products and components. 
